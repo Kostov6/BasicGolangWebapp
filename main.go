@@ -1,5 +1,7 @@
 package main
 
+//docker.io/library/testapp
+
 import (
 	"fmt"
 	"io"
@@ -12,6 +14,7 @@ import (
 func main() {
 	//creating web service
 	ws := new(restful.WebService)
+	ws.Route(ws.GET("/").To(home))
 	//creating GET route /hello
 	ws.Route(ws.GET("/hello").To(hello))
 	//creating GET route /healthz
@@ -25,6 +28,10 @@ func main() {
 }
 
 var breakOccured bool = false
+
+func home(req *restful.Request, resp *restful.Response) {
+	io.WriteString(resp, "This is home")
+}
 
 func handleBreak(req *restful.Request, resp *restful.Response) {
 	fmt.Println("Break occured")
