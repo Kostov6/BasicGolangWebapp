@@ -29,6 +29,12 @@ spec:
     spec:
       containers:
       - name: golangapp
-        image: testappfinalwithhome
+        image: kostov6/gowebapp:latest
         ports:
         - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 5
