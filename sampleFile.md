@@ -146,7 +146,7 @@ Here's a "line block":
 
 and images can be specified like so:
 
-![example image](https://miuc.org/wp-content/uploads/2019/02/Magic-in-marketing.jpg "An exemplary image")
+![example image](https://github.com/gardener/gardener/blob/master/logo/gardener-extensions-large.png "An exemplary image")
 
 Inline math equations go in like so: $\omega = d\phi / dt$. Display
 math should get its own line and be put in in double-dollarsigns:
